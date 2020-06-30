@@ -1,0 +1,16 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: football-league
+spec:
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: football-league
+    spec:
+      containers:
+        - name: football-league
+          image: gcr.io/upbeat-glow-281909/football-league
+          ports:
+            - containerPort: 8081

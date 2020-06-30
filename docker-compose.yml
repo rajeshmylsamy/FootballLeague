@@ -1,0 +1,10 @@
+version: "3"
+services:
+  football-server:
+    image: football-league
+    container_name: football-league
+    ports: ['127.0.0.1:8081:8081']
+  jenkins:
+    image: jenkins/jenkins
+    container_name: jenkins
+    ports: ['127.0.0.1:8080:8080']
