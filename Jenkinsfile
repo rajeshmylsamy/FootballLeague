@@ -32,14 +32,18 @@ pipeline {
         stage ('Build Docker Image') {
 
                         steps {
-                               sh 'docker build -t football-league .'
+                            withMaven(docker : 'docker') {
+                                sh 'docker build -t football-league .'
+                              }
                         }
                     }
 
         stage ('List Docker Image') {
 
                         steps {
-                               sh 'docker image ls'
+                         withMaven(docker : 'docker') {
+                                sh 'docker image ls'
+                               }
                         }
                     }
 
